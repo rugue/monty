@@ -1,9 +1,9 @@
 #include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
-* main - The monty code interpreter
-* @argc: The number of arguments
-* @argv: The monty file location
+* main - monty code interpreter
+* @argc: number of arguments
+* @argv: monty file location
 * Return: 0 on success
 */
 int main(int argc, char *argv[])
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-	unsigned int count = 0;
+	unsigned int counter = 0;
 
 	if (argc != 2)
 	{
@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
 		content = NULL;
 		read_line = getline(&content, &size, file);
 		bus.content = content;
-		count++;
+		counter++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, count, file);
+			execute(content, &stack, counter, file);
 		}
 		free(content);
 	}
